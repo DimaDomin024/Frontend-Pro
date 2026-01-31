@@ -1,8 +1,11 @@
-let name = prompt("Enter u name")
-let age = prompt("Enter u age")
-let city = prompt("Enter u city")
+let newNumber = prompt("Enter u naumber with 5 digits");
 
-let user = `Hello ${name}, u are ${age} years old and live in ${city}.`
+let d1 = Math.floor(newNumber / 10000)
+let d2 = Math.floor(newNumber / 1000) % 10
+let d3 = Math.floor(newNumber / 100) % 10
+let d4 = Math.floor(newNumber / 10) % 10
+let d5 = newNumber % 10 
 
-alert(user)
-console.log(user)
+let result = `${d1} ${d2} ${d3} ${d4} ${d5}`
+
+console.log(result);
