@@ -5,11 +5,11 @@
 
 // Додаткове завдання
 // Якщо в якомусь випадку він не захоче вводити інформацію і натисне Скасувати, показати йому повідомлення – “Шкода, що Ви не захотіли ввести свій(ю) …” і вказуємо, що він не захотів вводити – дату народження, місто чи вид спорту .
-let userYear = +prompt("Enter your year of birth:");
+let userYearbirn = +prompt("Enter your year of birth:");
 let userCity = prompt("Enter your city ");
 let userSport = prompt("Enter your favorite sport:");
 
-
+let userYear = new Date().getFullYear() - userYearbirn;
 
 if (userYear === null && userCity === null && userSport === null){
     alert("Шкода, що Ви не захотіли ввести свої дані" )
