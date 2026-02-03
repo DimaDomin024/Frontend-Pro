@@ -1,47 +1,31 @@
-// Додаткове завдання *
-// Вибираємо самі три види спорту та три чемпіони у цих видах. Відповідно, якщо користувач вкаже один із цих видів спорту, то показуємо йому повідомлення “Круто! Хочеш стати …? і підставляємо на місце точок ім'я та прізвище чемпіона.
-
-// Все це має бути відображено в одному вікні (алерті).
-
-// Додаткове завдання
-// Якщо в якомусь випадку він не захоче вводити інформацію і натисне Скасувати, показати йому повідомлення – “Шкода, що Ви не захотіли ввести свій(ю) …” і вказуємо, що він не захотів вводити – дату народження, місто чи вид спорту .
-let userYear = +prompt("Enter your year of birth:");
-let userCity = prompt("Enter your city ");
-let userSport = prompt("Enter your favorite sport:");
+let numOrStr = prompt('input number or string');
+console.log(numOrStr)
 
 
+// if (numOrStr === null) {
+//     console.log('ви скасували')
+// } else if (numOrStr.trim() === '') {
+//     console.log('Empty String');
+// } else if (isNaN(+numOrStr)) {
+//     console.log(' number is Ba_NaN')
+// } else {
+//     console.log('OK!')
+// }
 
-if (userYear === null && userCity === null && userSport === null){
-    alert("Шкода, що Ви не захотіли ввести свої дані" )
- } else if (userYear === null){
-    alert("Шкода, що Ви не захотіли ввести свій рік народження")
- }else if (userCity === null){
-    alert("Шкода, що Ви не захотіли ввести своє місто")
- }else if (userSport === null){
-    alert("Шкода, що Ви не захотіли ввести свій улюблений вид спорту")
- }else {
-    switch (userCity){
-        case 'Київ':
-            alert(`Ваш вік ${userYear} .Ти живеш у столиці України`);
-            break;
-        case 'Вашингтон':
-            alert(`Ваш вік ${userYear} .Ти живеш у столиці США`);
-            break;
-        case 'Лондон':
-            alert(`Ваш вік ${userYear} .Ти живеш у столиці Великої Британії`);
-            break;
-        default:
-            alert(`Ваш вік ${userYear} .Ти живеш у місті ${userCity}`);
-    }
-    switch (userSport){
-        case 'Футбол': 
-            alert("Круто! Хочеш стати Кріштіано Роналду?");
-            break;
-        case 'Плавання':
-            alert("Круто! Хочеш стати Майклом Фелпсом?");
-            break;
-        case 'Бокс':
-            alert("Круто! Хочеш стати Олександром Усиком?");
-            break;
-    }
- }
+switch (true) {
+  case numOrStr === null:
+    console.log('ви скасували');
+    break;
+
+  case numOrStr.trim() === '':   
+    console.log('Empty String');
+    break;
+
+  case isNaN(+numOrStr):
+    console.log('number is Ba_NaN');
+    break;
+
+  default:
+    console.log('OK!');
+}
+
