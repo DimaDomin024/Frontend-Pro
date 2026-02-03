@@ -1,3 +1,6 @@
-for (let i = 10; i <= 100; i += 10){
-    console.log(i * 26);
+let number = +prompt("Enter a number:");
+for (let i = 1 ; i <= 100 ; i ++){
+    if (i * i < number){
+        console.log(i);
+    }
 }
