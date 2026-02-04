@@ -1,37 +1,31 @@
-// let number = Math.floor(prompt("Enter a number:"));
 
-// let i = 2;
-
-// if (number <= 1) {
-//     console.log("Просте");
-// } else {
-//     while (i < number) {
-//         if (number % i === 0) {
-//             console.log("складне")
-//             break;
-//         }
-//         i++;
-        
-//     }
+// зробив по фану і вийшло ось так:
+function color(params) {
+    let user = +prompt("enter number to choose the color: 1 for Red, 2 for Green, 3 for Blue");
+    let userConfirm = confirm("do u want to continue?");
     
-// }
-// console.log("Просте");
-//З'ясувати, чи просто воно (простим називається число, більше 1, що не має інших дільників, крім 1 і себе).
 
-let number = Math.floor(prompt("Enter a number:"));
-
-let config = true ;
-
-for(let i = 2 ; i < number ; i ++){
-    if(number % i === 0 ){
-        config = false;
-        break;
+    
+        switch(user){
+            case 1:
+                console.log("Red");
+                break;
+            case 2:
+                console.log("Green");
+                break;
+            case 3:
+                console.log("Blue");
+                break;
+            default: 
+                console.log("Invalid input");
+        }
+    
+    
+    if (userConfirm === true){
+        return color();
+    }  else {
+        console.log("Thank you for using the color chooser!");
     }
-    
+
 }
-if (config === true){
-        console.log("Просте");
-    }else {
-        console.log("Складне");
-    }
-
+color();
