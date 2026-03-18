@@ -1,8 +1,20 @@
-function name(num1){
-    return function(num2){
-        return num1 * num2;
+function userNumber(){
+    for (i = 0; i < 10; i++){
+    
+        
+        let number = + prompt("pls write number > 100");
+                if (number > 100) {
+                    console.log(number);
+                    break;
+            }   
+        
+                
     }
+        
+    
+        
+       
+        
 }
-console.log(
-    name(5)(2)
-)
+
+userNumber();
