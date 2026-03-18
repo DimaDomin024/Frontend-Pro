@@ -1,13 +1,16 @@
-let first = prompt("Enter u first string")
-let second = prompt("Second")
 
-let remove = function(first,second){
-    let result = first;
 
-    for(let i = 0; i < second.length; i++ ){
-        let char = second[i];
-        result = result.replaceAll(char, '');
+
+let array = ["sdsd",2,22,"232dsd",NaN,true];
+
+function check(array){
+    let numbers = array.filter(function(item) {
+        return typeof item === 'number' && !isNaN(item)
+    });
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
     }
-    return result;
+    return sum / numbers.length;
 }
-console.log(remove(first,second))
+console.log(check(array));
