@@ -1,16 +1,8 @@
-function outer(result){
-    let x = result;
-    
-    function first(amount){
-        x += amount;
-        console.log("first = ", x );
+function name(num1){
+    return function(num2){
+        return num1 * num2;
     }
-    return first;
 }
-
-let finish = outer(0)
-
-finish(4);
-finish(6);
-finish(10);
-finish(7);
+console.log(
+    name(5)(2)
+)
