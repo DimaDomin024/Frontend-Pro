@@ -1,16 +1,16 @@
+// Реалізуйте функцію removeElement(array, item), щоб видалити елемент item з масиву array.
 
+// Наприклад:
 
+const array = [1, 3, 4, 6, 2, 5, 7];
 
-let array = ["sdsd",2,22,"232dsd",NaN,true];
-
-function check(array){
-    let numbers = array.filter(function(item) {
-        return typeof item === 'number' && !isNaN(item)
-    });
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
+function removeElement(array, item){
+    if (item > 0 && item < array.length){
+        array.splice(item , 1)
     }
-    return sum / numbers.length;
 }
-console.log(check(array));
+
+
+removeElement(array,1);
+
+console.log(array); // Результат: [1, 3, 6, 2, 5, 7]
