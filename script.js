@@ -1,20 +1,18 @@
-function userNumber(){
-    for (i = 0; i < 10; i++){
-    
-        
-        let number = + prompt("pls write number > 100");
-                if (number > 100) {
-                    console.log(number);
-                    break;
-            }   
-        
-                
-    }
-        
-    
-        
-       
-        
-}
+let step = 0;
 
-userNumber();
+
+let ladder = {
+  up: function () {
+    step ++ ;
+    return this;
+  },
+  down: function () {
+    step --;
+    return this;
+  },
+  showStep: function () { 
+    return console.log(step);
+  }
+};
+
+ladder.up().up().down().showStep();
