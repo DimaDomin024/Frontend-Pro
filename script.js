@@ -1,33 +1,27 @@
-let company = {
+const myTable = document.createElement("table");
+
+for(let i = 0; i < 11; i ++){
+    const tr = document.createElement("tr");
+    tr.classList.add("p-tr");
     
-    sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+
+    for(let j = 0; j < 11; j++){
+        const td = document.createElement("td");
+        td.innerText = `${i * j}`;
+
+        tr.append(td);
     
-    development: {
-
-        web: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
-
-        internals: [{name: 'Jack', salary: 1300}]
-    }
-};
-
-
-function sumSalary(obj){
-    if (Array.isArray(obj)) {
-    let sum = 0;
-    for (let i = 0; i < obj.length; i++) {
-      sum += obj[i].salary ;
-    }
-    return sum;
-    }    
-    let sum = 0;
-    for(let key in obj) {
-        sum += sumSalary(obj[key]);
+        if (i === 0 || j === 0)  {
+        td.innerText = "";
+        td.style.display = "none";
+        }
+        
     }
 
-    return sum;
 
+    myTable.append(tr);
 }
 
-console.log(
-    sumSalary(company)
-);
+
+const body = document.querySelector("body");
+body.append(myTable);
