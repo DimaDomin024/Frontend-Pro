@@ -1,27 +1,11 @@
-const myTable = document.createElement("table");
-
-for(let i = 0; i < 11; i ++){
-    const tr = document.createElement("tr");
-    tr.classList.add("p-tr");
-    
-
-    for(let j = 0; j < 11; j++){
-        const td = document.createElement("td");
-        td.innerText = `${i * j}`;
-
-        tr.append(td);
-    
-        if (i === 0 || j === 0)  {
-        td.innerText = "";
-        td.style.display = "none";
-        }
-        
-    }
+const myButton = document.querySelector("#myButton")
+const myText = document.querySelector("#myText")
 
 
-    myTable.append(tr);
+
+function changeColor(){
+    myText.classList.toggle("active");
 }
 
 
-const body = document.querySelector("body");
-body.append(myTable);
+myButton.addEventListener("click",changeColor);
