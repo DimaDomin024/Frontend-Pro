@@ -1,10 +1,4 @@
-.active {
-  color : #66bef8;
-}
-
-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blanchedalmond;
+img {
+  width: 300px;
+  height: 200px;
 }
