@@ -1,6 +1,25 @@
-const img = document.createElement("img");
-img.src = "pict/" + (Math.floor(Math.random() * 9) + 1) + ".jpg";
+const tasks = document.querySelector("#tasks")
+const actions = ["Task 1","Task 2","Task 3"];
+const input = document.querySelector("#addTask")
+const addButton = document.querySelector("#addButton")
 
-document.body.append(img);
+function createTask(newInput){
+    const item = document.createElement("li");
+    const itemButton = document.createElement("button");
+    item.classList.add("action");
+    itemButton.classList.add("itemButton");
+    item.textContent = newInput;
+    itemButton.textContent = "Delete";
+    item.append(itemButton);
+    tasks.append(item);
+    itemButton.addEventListener("click", e => {
+        item.remove();
+    });
+}
+actions.forEach(action => createTask(action)) 
 
-console.log(img);
+addButton.addEventListener("click", e => {
+    createTask(input.value);
+    input.value = "";
+    e.stopPropagation();
+})
