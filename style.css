@@ -1,8 +1,41 @@
-.error {
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.slider img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.not-active{
     display: none;
 }
 
-.goError {
-    display: block;
-    color: red;
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+    opacity: 0.5;
+}
+#dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.dot.active {
+    background: black;
+    opacity: 1;
 }

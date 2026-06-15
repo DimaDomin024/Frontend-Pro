@@ -1,26 +1,58 @@
-const formWithData = document.querySelector("#logForm");
-formWithData.addEventListener("submit" , function (e) {
-    e.preventDefault();
+const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+const slide = document.querySelector('#slide');
+const dotsContainer = document.querySelector('#dots');
 
-    const formData = new FormData(formWithData);
-    const name = formData.get("name");
-    const message = formData.get("message");
-    const phone = formData.get("phone");
-    const email = formData.get("email");
-    const errors = [];
+const images = [
+    './pict/1.jpg',
+    './pict/2.jpg',
+    './pict/3.jpg',
+    './pict/4.jpg',
+    './pict/5.jpg',
+    './pict/6.jpg',
+    './pict/7.jpg',
+    './pict/8.jpg',
+    './pict/9.jpg'
+];
 
-    if (!name || !name.trim()){
-        document.querySelector("#error-name").classList.toggle("goError")
+let i = 0;
+images.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+
+    dot.addEventListener('click', () => {
+        i = index;
+        render();
+    });
+    dotsContainer.appendChild(dot);
+});
+
+function render() {
+    slide.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = images[i];
+    slide.appendChild(img);
+
+    prev.classList.toggle('not-active', i === 0);
+    next.classList.toggle('not-active', i === images.length - 1);
+
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === i);
+    });
+}
+
+next.addEventListener('click', () => {
+    if (i < images.length - 1) {
+        i++;
+        render();
     }
-    if (message.length < 5){
-        document.querySelector("#error-message").classList.toggle("goError")
+});
+
+prev.addEventListener('click', () => {
+    if (i > 0) {
+        i--;
+        render();
     }
-    if (!/^\+380\d{9}$/.test(phone)){
-        document.querySelector("#error-phone").classList.toggle("goError")
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.querySelector("#error-email").classList.toggle("goError")
-    }
-console.log(name,message,phone,email);
-this.reset();
-})
+});
+
+render();
