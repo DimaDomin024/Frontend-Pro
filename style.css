@@ -1,7 +1,8 @@
-.action{
-    padding: 5px;
+.error {
+    display: none;
 }
-.itemButton{
-    
-    margin-left: 9px;
+
+.goError {
+    display: block;
+    color: red;
 }

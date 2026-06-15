@@ -6,15 +6,38 @@
     <title>MAIN</title>
 </head>
 <body>
-
-<div>
-<button id = myButton1>TakeLink</button>
-</div>  
- 
-<div>
-<button id = myButton2>VisitLink</button>
-</div> 
-
+    <form id = "logForm" novalidate >We would like to help you
+        <div class = "row">
+            <label>
+                <input id = "nameInput" placeholder="name"  name = "name" required>
+            </label>
+            <p><span id = 'error-name' class="error">Name - обов'язкове текстове поле</span></p>
+        </div>
+        <div class = "row">
+            <label>
+                <input id = "messageInput"  placeholder="Message" name = "message">
+            </label>
+            <p><span id = 'error-message' class="error">Message - текстове поле не менше 5 символів</span></p>
+        </div>
+        HOW TO ANSWER YOU?
+        <div class = "row">
+            <label>
+                <input id = "phoneInput" placeholder="Phone Number" name = "phone">
+            </label>
+            <p><span id = 'error-phone' class="error">З початком на +380</span></p>
+        </div>
+        <div class = "row">
+            <label>
+                <input id = "emailInput" type = "email" name = "email" placeholder="email">
+            </label>
+            <p><span id = 'error-email' class="error">email обов'язково повинен мати @ та крапку</span></p>
+        </div>
+        <div class = "row">
+            <button class = "button" id="logButton" type="submit">
+                Send message
+            </button>
+        </div>
+    </form>
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </body>
